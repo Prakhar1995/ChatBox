@@ -1,0 +1,10 @@
+*{
+    margin:0;
+    --heightelement : 100vh;
+}
+
+.message{
+    height:80vh;
+    background-color: cadetblue;
+}
+

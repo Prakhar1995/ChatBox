@@ -1,0 +1,25 @@
+*{
+    --heightelement:100vh;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:var(--heightelement);
+    background-color: teal;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    height:calc((var(--heightelement))/3);
+    justify-content: space-evenly;
+    
+}
+.submit{
+    color: blue;
+    cursor: pointer;
+}
+.form input{
+    border-radius: 50px;
+    height:30px;
+}

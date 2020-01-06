@@ -1,0 +1,9 @@
+<div class="message">
+  <div *ngFor="let item of messageArray">
+  <span><strong>{{item['user']}}</strong>:&nbsp;<strong>{{item['message']}}</strong></span>
+</div>
+</div>
+<div class="input-group flex-nowrap">
+  <input type="text" class="form-control" placeholder="message" aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="message" required>
+</div>
+<button (click)="send()">Send</button>
