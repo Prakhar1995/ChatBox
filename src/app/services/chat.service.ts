@@ -9,7 +9,7 @@ socket: any;
 user: string;
 chatRooms: string;
   constructor() {
-  this.socket = io('http://localhost:3000');
+  this.socket = io('https://infinite-harbor-89435.herokuapp.com/');
   console.log('service');
 
   }

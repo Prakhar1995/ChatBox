@@ -1,9 +1,16 @@
-<div class="message">
-  <div *ngFor="let item of messageArray">
-  <span><strong>{{item['user']}}</strong>:&nbsp;<strong>{{item['message']}}</strong></span>
+<div class="heading">
+ <span>ChatBox</span> <span>{{room}}</span>
+</div>
+<div class="message" #scrollMe>
+  <div class='msgcontainer'  *ngFor="let item of messageArray">
+  <div [ngClass]="{'self': item['user'] == 'You' , 'other': item['user'] != 'You' }" id="userMsg"><strong id="usr">{{item['user']}}</strong>
+    
+    <br><i>{{item['message']}}</i><br>
+  <time>{{item['time']}}</time></div>
 </div>
 </div>
-<div class="input-group flex-nowrap">
-  <input type="text" class="form-control" placeholder="message" aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="message" required>
+<div class="input-group inpcon flex-nowrap">
+  <input type="text" class="inp" placeholder="message" aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="message" required>
+  <button class="btn btn-outline-primary" (keydown.enter)="send()" (click)="send()">Send</button>
 </div>
-<button (click)="send()">Send</button>
+

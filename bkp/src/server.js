@@ -4,11 +4,16 @@ const path = require('path');
 const app = express();
 const socketio = require('socket.io');
 const port = process.env.PORT || 3000
+app.use('/' ,express.static( __dirname));
 
-
+const p=path.join(__dirname,'../public')
+app.use('/' ,express.static(p));
 const server = http.createServer(app);
 const io = socketio(server);
- 
+app.get('/',(req,res)=>{
+    console.log("check")
+    res.sendFile(p);
+})
 io.on('connection',(socket)=>{
     console.log("connection established");
     socket.on('join',(data)=>{
@@ -23,7 +28,7 @@ io.on('connection',(socket)=>{
     socket.on('message',(data)=>{
         console.log(data);
         //io.in(room).emit
-        socket.broadcast.in(data['chatRooms']).emit('messageemit',(data))
+        io.in(data['chatRooms']).emit('messageemit',(data))
     })
 
 })

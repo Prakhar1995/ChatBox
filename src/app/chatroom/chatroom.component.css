@@ -2,9 +2,67 @@
     margin:0;
     --heightelement : 100vh;
 }
-
+.heading{
+    background-color: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:10%;
+}
 .message{
-    height:80vh;
-    background-color: cadetblue;
+    height:80%;
+    /* background-color: cadetblue; */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+#userMsg{
+    background: #eef8ff;
+    min-width: 50px;
+    padding: 10px;
+    border-radius: 2px;
+    word-break: break-all;
+    min-height:80px;
+    margin:5px;
+}
+.self{
+    float:right;
+}
+.other{
+    float:left;
+}
+.inpcon{
+    height:10%;
+}
+.inp{
+    background-color: ghostwhite;
+    width: 100%;
+    
+}
+
+.msgcontainer{
+max-width:100%;
+width:100%;
+}
+time{
+    font-size: 0.7rem;
+    color: rgba(0,0,0,.35);
+   
+    float: right;
+    cursor: default;
+}
+#usr{
+    font-size: 14px;
+    margin: 0 0 2px 0;
+    color: #666;
+    font-weight: 700;
+    margin-top: -2px;
+    margin-bottom: 5px;
+    transition: all .2s ease;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
